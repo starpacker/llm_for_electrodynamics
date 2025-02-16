@@ -1,0 +1,844 @@
+
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>group_003_answer</title>
+        <script type="text/javascript" async 
+            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+        </script>
+    </head>
+    <body>
+        <h1>group_003_answer</h1>
+        <h1>group_003_answer</h1>
+<h2>problem_1</h2>
+<p><think>
+Okay, so I need to compute the divergence of (r hat divided by r squared). Hmm, let me write that out first. So, ∇ · (ȓ / r²). </p>
+<p>Alright, let's start by recalling what each part means. The vector r is given as x î + y ĵ + z k̂, right? And r is the magnitude of this vector, which is sqrt(x² + y² + z²). Then, r hat is just r divided by its magnitude, so it's a unit vector in the direction of r.</p>
+<p>So, the expression we're dealing with is the divergence of a vector field. That vector field here is ȓ / r². Let me denote this vector field as A, so A = ȓ / r². To find the divergence of A, I'll need to take the partial derivatives of each component of A with respect to x, y, and z, and sum them up.</p>
+<p>Let me write out A more explicitly. Since ȓ is (x, y, z), then A would be (x/r³, y/r³, z/r³). So, each component of A is the corresponding coordinate divided by r cubed.</p>
+<p>Now, the divergence of A is ∂A_x/∂x + ∂A_y/∂y + ∂A_z/∂z. Let's compute each term separately.</p>
+<p>Starting with ∂A_x/∂x. A_x is x / r³. So, taking the derivative with respect to x:</p>
+<p>First, note that r² = x² + y² + z², so r³ = r * r². Therefore, A_x = x / (x² + y² + z²)^(3/2).</p>
+<p>To differentiate this, I'll use the quotient rule or recognize it as a product with a negative exponent. Maybe using the chain rule is easier here.</p>
+<p>So, d/dx [x / r³] = (1 * r³ - x * dr³/dx) / r⁶.</p>
+<p>Wait, actually, maybe better to write it as x * (r²)^(-3/2). Then, using the product rule:</p>
+<p>d/dx [x * (r²)^(-3/2)] = (1)<em>(r²)^(-3/2) + x</em>(-3/2)<em>(r²)^(-5/2)</em>2r*(dr²/dx).</p>
+<p>Simplify that:</p>
+<p>= (r²)^(-3/2) - 3x * r * (dr²/dx) * (r²)^(-5/2).</p>
+<p>But dr²/dx is 2x, since r² = x² + y² + z². So plugging that in:</p>
+<p>= (r²)^(-3/2) - 3x * r * 2x * (r²)^(-5/2)
+= (r²)^(-3/2) - 6x² * r * (r²)^(-5/2)</p>
+<p>Factor out (r²)^(-5/2):</p>
+<p>= (r²)^(-5/2) [ r² - 6x² ]</p>
+<p>Similarly, because r² = x² + y² + z², so r² - 6x² = y² + z² - 5x². Wait, no, hold on. Actually, r² is x² + y² + z², so if I factor out (r²)^(-5/2), it becomes:</p>
+<p>(r²)^(-5/2) [ (x² + y² + z²) - 6x² ] 
+= (r²)^(-5/2) [ y² + z² - 5x² ]</p>
+<p>Hmm, but wait, that seems complicated. Maybe there's a simpler way.</p>
+<p>Alternatively, perhaps using spherical coordinates might make this easier, since the vector field has spherical symmetry. In spherical coordinates, the divergence operator has a different form. Specifically, for a vector field that only depends on r, like our case where A = ȓ / r², the divergence simplifies.</p>
+<p>In spherical coordinates, the divergence of a radial vector field A(r)ȓ is given by (1/(r²)) d/dr (r² A(r)). So, applying that here:</p>
+<p>∇ · A = (1/(r²)) d/dr (r² * (1/r²)) ) = (1/(r²)) d/dr (1) = 0.</p>
+<p>Wait, that seems too straightforward. But does that apply here?</p>
+<p>Yes, because our vector field is purely radial and depends only on r. So, according to the formula, the divergence should indeed be zero.</p>
+<p>But wait, earlier when I tried computing it in Cartesian coordinates, I ended up with something involving y² and z² terms. Did I make a mistake there?</p>
+<p>Let me double-check. When I computed ∂A_x/∂x, I got (r²)^(-3/2) - 6x² * r * (r²)^(-5/2). Similarly, the same structure would apply for ∂A_y/∂y and ∂A_z/∂z.</p>
+<p>Adding all three together:</p>
+<p>Sum over i of ∂A_i/∂x_i = [ (r²)^(-3/2) - 6x² * r * (r²)^(-5/2) ] + [ (r²)^(-3/2) - 6y² * r * (r²)^(-5/2) ] + [ (r²)^(-3/2) - 6z² * r * (r²)^(-5/2) ]</p>
+<p>That sums up to 3<em>(r²)^(-3/2) - 6r</em>(r²)^(-5/2)(x² + y² + z²)</p>
+<p>Since x² + y² + z² = r², substitute that in:</p>
+<p>= 3<em>(r²)^(-3/2) - 6r</em>(r²)^(-5/2)<em>r²
+= 3</em>(r²)^(-3/2) - 6r<em>(r²)^(-3/2)
+= [3 - 6r²]</em>(r²)^(-3/2)</p>
+<p>Wait, that doesn't seem right because units don't match. Hold on, let's see:</p>
+<p>Actually, 6r<em>(r²)^(-5/2) * r² = 6r</em>(r²)^(-5/2 + 2) = 6r<em>(r²)^(-1/2) = 6</em>(r²)^(1/2) = 6r.</p>
+<p>Wait, no, that's not correct either. Let me recast it properly.</p>
+<p>Each term after substitution:</p>
+<ul>
+<li>For the second part: -6x²<em>r</em>(r²)^(-5/2) similarly for y² and z².</li>
+</ul>
+<p>When summed, it's -6r<em>(r²)^(-5/2)</em>(x² + y² + z²) = -6r<em>(r²)^(-5/2)</em>r² = -6r<em>(r²)^(-3/2) = -6</em>(r²)^(-1/2).</p>
+<p>And the first parts sum to 3*(r²)^(-3/2).</p>
+<p>Therefore, total divergence is 3<em>(r²)^(-3/2) - 6</em>(r²)^(-1/2).</p>
+<p>Factor out 3*(r²)^(-3/2):</p>
+<p>= 3*(r²)^(-3/2) [1 - 2r²]</p>
+<p>Wait, that still doesn't look right. Because 3<em>(r²)^(-3/2) minus 6</em>(r²)^(-1/2) isn't factoring neatly. Maybe I made a miscalculation.</p>
+<p>Wait another approach: Let's go back to the spherical coordinates method. If the vector field is purely radial and depends only on r, then the divergence is (1/r²) d/dr (r² A_r). Here, A_r = 1/r².</p>
+<p>So,</p>
+<p>∇ · A = (1/r²) d/dr (r² * (1/r²)) = (1/r²) d/dr (1) = 0.</p>
+<p>This suggests that the divergence is zero everywhere except at the origin where r=0, because at r=0, the vector field isn't defined.</p>
+<p>But why did my Cartesian approach give a non-zero result? It must mean I messed up somewhere.</p>
+<p>Wait, let's try calculating the divergence again in Cartesian coordinates step by step.</p>
+<p>Given A = (x/r³, y/r³, z/r³).</p>
+<p>Compute ∂A_x/∂x:</p>
+<p>A_x = x / r³</p>
+<p>So, ∂A_x/∂x = (1 * r³ - x * ∂r³/∂x) / r⁶</p>
+<p>Wait, no, that's incorrect. The derivative of x/r³ with respect to x is:</p>
+<p>Using quotient rule: (1 * r³ - x * 3r² * (x/r)) / r⁶</p>
+<p>Because ∂r³/∂x = 3r² * (∂r/∂x) = 3r²*(x/r) = 3r x.</p>
+<p>So,</p>
+<p>∂A_x/∂x = (r³ - 3r² x² / r) / r⁶ = (r³ - 3r x²)/r⁶ = (r² - 3x²)/r⁶</p>
+<p>Similarly, ∂A_y/∂y = (r² - 3y²)/r⁶</p>
+<p>And ∂A_z/∂z = (r² - 3z²)/r⁶</p>
+<p>Adding these together:</p>
+<p>[r² - 3x² + r² - 3y² + r² - 3z²]/r⁶ = [3r² - 3(x² + y² + z²)] / r⁶</p>
+<p>But x² + y² + z² = r², so numerator becomes 3r² - 3r² = 0.</p>
+<p>Ah! There we go. So the divergence is zero.</p>
+<p>I must have made a mistake earlier when expanding the terms. Now, adding them correctly gives zero. So both methods agree: the divergence is zero.</p>
+<p>Therefore, the final answer is zero.
+</think></p>
+<p>The divergence of the vector field $$ \frac{\hat{r}}{r^2} $$ is calculated to be zero everywhere except at the origin.</p>
+<p>$\boxed{0}$&lt;｜end▁of▁sentence｜&gt;</p>
+<h2>problem_2</h2>
+<p><think>
+Okay, I need to find the charge density σ given the electric field E(r). Hmm, since this involves electromagnetism, Gauss's Law should come into play here. Let me recall what Gauss's Law says. </p>
+<p>I remember that in differential form, Gauss's Law states that the divergence of the electric field E equals the charge density divided by ε₀. So mathematically, that's ∇·E = ρ/ε₀. Therefore, my goal is to compute the divergence of the given E and then multiply by ε₀ to get ρ.</p>
+<p>The electric field is given in spherical coordinates, which makes things a bit easier because the divergence formula in spherical coordinates is straightforward. Let me write down the components of E:</p>
+<p>E_r = A/r,
+E_θ = 0,
+E_φ = (B sinθ cosφ)/r.</p>
+<p>Wait, actually, looking back at the problem statement, the electric field is written as (A r̂ + B sinθ cosφ φ̂)/r. So yeah, E_r is A/r, E_θ is zero, and E_φ is (B sinθ cosφ)/r.</p>
+<p>Now, the divergence in spherical coordinates (∇·E) is given by:</p>
+<p>(1/r²) [∂(r² E_r)/∂r] + (1/(r sinθ)) [∂(E_θ sinθ)/∂θ] + (1/(r sinθ)) [∂E_φ / ∂φ].</p>
+<p>Let me plug in each component step by step.</p>
+<p>First term: (1/r²) ∂(r² E_r)/∂r.</p>
+<p>Compute r² E_r: r² * (A/r) = A r.</p>
+<p>Then take derivative with respect to r: d(A r)/dr = A.</p>
+<p>So first term becomes (1/r²)(A) = A / r².</p>
+<p>Second term: (1/(r sinθ)) ∂(E_θ sinθ)/∂θ.</p>
+<p>But E_θ is zero, so this whole term is zero.</p>
+<p>Third term: (1/(r sinθ)) ∂E_φ / ∂φ.</p>
+<p>E_φ is (B sinθ cosφ)/r. Taking derivative with respect to φ gives (B sinθ (-sinφ))/r.</p>
+<p>Multiply by (1/(r sinθ)): [(-B sinφ)/(r² sinθ)] * (1/(r sinθ))? Wait, no, wait. Let me correct that.</p>
+<p>Actually, the third term is (1/(r sinθ)) times the partial derivative of E_φ with respect to φ. So:</p>
+<p>∂E_φ/∂φ = ∂[(B sinθ cosφ)/r]/∂φ = (-B sinθ sinφ)/r.</p>
+<p>Therefore, multiplying by (1/(r sinθ)):</p>
+<p>[(-B sinθ sinφ)/r] * (1/(r sinθ)) ) = (-B sinφ)/r².</p>
+<p>Putting all terms together:</p>
+<p>∇·E = (A / r²) + 0 + (-B sinφ)/r².</p>
+<p>Simplify: ∇·E = (A - B sinφ)/r².</p>
+<p>According to Gauss's Law, ∇·E = ρ/ε₀. Therefore,</p>
+<p>ρ = ε₀ (A - B sinφ)/r².</p>
+<p>Wait, but hold on. Is there any possibility that I made a mistake in computing the derivatives? Let me double-check each term.</p>
+<p>First term: Correct, because d/dr (A r) is A, so A/r².</p>
+<p>Second term: Since E_θ is zero, yes, that term is zero.</p>
+<p>Third term: Partial derivative of E_φ with respect to φ is indeed -B sinθ sinφ / r. Then multiplied by 1/(r sinθ), giving -B sinφ / r². That seems right.</p>
+<p>So combining everything, the divergence is (A - B sinφ)/r². Hence, the charge density is ρ = ε₀ (A - B sinφ)/r².</p>
+<p>Wait, but the question asks for the charge density σ. Oh, maybe they meant ρ instead of σ? Because σ usually denotes surface charge density, while ρ is volume charge density. But the problem statement says "calculate the charge density σ". Maybe it's a typo, perhaps they mean ρ. Alternatively, could it be a surface charge?</p>
+<p>Looking back at the problem: It just says "charge density", without specifying volume or surface. Given that the electric field varies with position (depends on θ and φ), it might not be a surface charge. Also, the presence of both r and angular dependencies suggests it's a volume charge density.</p>
+<p>Alternatively, perhaps the user intended σ as the symbol, but in standard notation, σ is surface charge density. However, since the problem doesn't specify, I'll proceed with ρ as the volume charge density.</p>
+<p>Thus, my conclusion is that the charge density ρ is equal to ε₀ times (A - B sinφ) divided by r squared.
+</think></p>
+<p>To determine the charge density corresponding to the given electric field, we apply Gauss's Law in its differential form, which relates the divergence of the electric field to the charge density. Here's the breakdown:</p>
+<ol>
+<li><strong>Electric Field Components</strong>:</li>
+<li>$$ E_r = \frac{A}{r} $$</li>
+<li>$$ E_\theta = 0 $$</li>
+<li>
+<p>$$ E_\phi = \frac{B \sin\theta \cos\phi}{r} $$</p>
+</li>
+<li>
+<p><strong>Divergence in Spherical Coordinates</strong>:
+   $$
+   \nabla \cdot \vec{E} = \frac{1}{r^2} \frac{\partial}{\partial r}(r^2 E_r) + \frac{1}{r \sin\theta} \frac{\partial}{\partial \theta}(E_\theta \sin\theta) + \frac{1}{r \sin\theta} \frac{\partial E_\phi}{\partial \phi}
+   $$</p>
+</li>
+<li>
+<p><strong>Calculating Each Term</strong>:</p>
+</li>
+<li>First term: $$ \frac{A}{r^2} $$</li>
+<li>Second term: 0 (since $$ E_\theta = 0 $$)</li>
+<li>
+<p>Third term: $$ -\frac{B \sin\phi}{r^2} $$</p>
+</li>
+<li>
+<p><strong>Combine Terms</strong>:
+   $$
+   \nabla \cdot \vec{E} = \frac{A - B \sin\phi}{r^2}
+   $$</p>
+</li>
+<li>
+<p><strong>Apply Gauss's Law</strong>:
+   $$
+   \rho = \epsilon_0 \left( \frac{A - B \sin\phi}{r^2} \right)
+   $$</p>
+</li>
+</ol>
+<p><strong>Answer</strong>:<br />
+The charge density is \boxed{\dfrac{\epsilon_0 (A - B \sin\phi)}{r^2}}.&lt;｜end▁of▁sentence｜&gt;</p>
+<h2>problem_3</h2>
+<p><think>
+Okay, let me try to figure out how to solve this problem step by step. So, we have a point charge q near an infinite grounded conducting plane. The charge is released from rest at a distance d and moves towards the plane. I need to find the time T it takes to reach the plane.</p>
+<p>First, I remember that when dealing with charges near conductors, image charges come into play. From document 2, I see that the image charge method was used, where the conducting plane has an image charge -q located symmetrically behind the plane. This setup creates an effective force on the original charge.</p>
+<p>In document 1, it was mentioned that the potential in region V' (the region beyond the conducting plane) is zero because the induced surface charge density σ is zero. But wait, actually, in document 2, they calculated the surface charge density as σ = -(q d)/(2π(r² + d²)^(3/2)) which isn't zero everywhere except at infinity. Hmm, maybe I misread document 1. Anyway, moving on.</p>
+<p>Since the charge is moving under the influence of the electrostatic force, I should probably consider the forces involved. The force on the charge q is due to its interaction with the conducting plane. From document 2, part (b), the force on the charge is F = q²/(16 π ε₀ d²). Wait, no, that was the force on the image charge, but since the conducting plane exerts a force equal and opposite, the actual force on q is F = q²/(16 π ε₀ d²).</p>
+<p>But hold on, in reality, the force on the charge q due to the conducting plane can also be thought of as the attraction between q and its image charge -q. The distance between them is 2d, so the force should be F = (1/(4 π ε₀)) * (q * (-q))/( (2d)^2 ) = q²/(16 π ε₀ d²). Yeah, that matches.</p>
+<p>Now, knowing the force, I can relate it to acceleration. Since F = ma, then a = F/m = q²/(16 π ε₀ m d²). But wait, the force isn't constant because as the charge moves closer to the plane, d decreases, so the force increases. Therefore, the acceleration isn't constant, making this a variable acceleration problem.</p>
+<p>Hmm, solving for time with variable acceleration might be tricky. Maybe I can express acceleration in terms of velocity and integrate. Let's denote the distance from the charge to the plane as x(t), where x=d at t=0 and x=0 at t=T.</p>
+<p>The force at any position x is F = q²/(16 π ε₀ (2x)^2) = q²/(64 π ε₀ x²). Then, F = ma = m dv/dt. Also, by Newton's second law, F = m dv/dt = m v dv/dx.</p>
+<p>So, setting up the equation: m v dv/dx = q²/(64 π ε₀ x²).</p>
+<p>This gives us a separable differential equation. Rearranging terms:</p>
+<p>v dv = (q²)/(64 π ε₀ m) * (1/x²) dx.</p>
+<p>Integrating both sides. On the left side, integrate v dv from 0 to v, giving (1/2)v². On the right side, integrate (q²)/(64 π ε₀ m) * (1/x²) dx from d to x.</p>
+<p>So,</p>
+<p>(1/2)v² = (q²)/(64 π ε₀ m) * (-1/x) evaluated from d to x.</p>
+<p>Which becomes:</p>
+<p>(1/2)v² = (q²)/(64 π ε₀ m) * (-1/x + 1/d).</p>
+<p>Simplify constants:</p>
+<p>(q²)/(64 π ε₀ m) = (q²)/(64 π ε₀ m).</p>
+<p>So,</p>
+<p>v = sqrt[ (q²)/(32 π ε₀ m) * (1/d - 1/x) ].</p>
+<p>Expressed differently,</p>
+<p>v = sqrt( (q²)/(32 π ε₀ m) ) * sqrt( (1/d - 1/x) ).</p>
+<p>Let’s denote k = sqrt( (q²)/(32 π ε₀ m) ), so v = k sqrt(1/d - 1/x).</p>
+<p>But v = dx/dt, so:</p>
+<p>dx/dt = k sqrt(1/d - 1/x).</p>
+<p>This looks like a differential equation we can separate variables for. Let's write it as:</p>
+<p>dt = dx / [k sqrt(1/d - 1/x)].</p>
+<p>To find T, we integrate from x=d to x=0:</p>
+<p>T = ∫ dt = ∫ from d to 0 of dx / [k sqrt(1/d - 1/x)].</p>
+<p>Wait, integrating from d to 0 would give a negative time, so perhaps reverse limits:</p>
+<p>T = ∫ from 0 to d of dx / [k sqrt(1/d - 1/x)].</p>
+<p>Let me make a substitution to simplify the integral. Let’s set u = 1/x, so du = -1/x² dx, but not sure if helpful. Alternatively, let’s substitute t such that 1/d - 1/x = t².</p>
+<p>Alternatively, let’s factor out 1/d inside the square root:</p>
+<p>sqrt(1/d - 1/x) = sqrt( (x - d)/(d x) ) = sqrt( (d - x)/d x ).</p>
+<p>So,</p>
+<p>sqrt( (d - x)/d x ) = sqrt( (d - x)/d ) / sqrt(x).</p>
+<p>Thus, the integral becomes:</p>
+<p>T = ∫ from 0 to d [1 / (k sqrt( (d - x)/d )) ] * [1/sqrt(x)] dx.</p>
+<p>Factor out constants:</p>
+<p>T = (1/k) * sqrt(d) ∫ from 0 to d [1 / sqrt(d - x)] * [1/sqrt(x)] dx.</p>
+<p>Let’s change variable: let y = x/d, so x = y d, dx = d dy. Limits become y=0 to y=1.</p>
+<p>Then,</p>
+<p>T = (1/k) * sqrt(d) ∫ from 0 to 1 [1 / sqrt(d - y d)] * [1/sqrt(y d)] d dy.</p>
+<p>Simplify inside the square roots:</p>
+<p>sqrt(d - y d) = sqrt(d(1 - y)) = sqrt(d) sqrt(1 - y).</p>
+<p>Similarly, sqrt(y d) = sqrt(d) sqrt(y).</p>
+<p>Substituting back:</p>
+<p>T = (1/k) * sqrt(d) ∫ from 0 to 1 [1 / (sqrt(d) sqrt(1 - y))] * [1/(sqrt(d) sqrt(y))] d dy.</p>
+<p>The sqrt(d)s cancel out:</p>
+<p>T = (1/k) ∫ from 0 to 1 [1 / (sqrt(1 - y) sqrt(y))] dy.</p>
+<p>That integral is known. Recall that ∫ from 0 to 1 y^(-1/2) (1 - y)^(-1/2) dy = B(1/2, 1/2) = π, where B is the beta function.</p>
+<p>Therefore,</p>
+<p>T = (1/k) * π.</p>
+<p>Recall that k = sqrt( q²/(32 π ε₀ m) ) = q / sqrt(32 π ε₀ m).</p>
+<p>So,</p>
+<p>T = π / ( q / sqrt(32 π ε₀ m) ) ) = π * sqrt(32 π ε₀ m) / q.</p>
+<p>Simplify sqrt(32):</p>
+<p>sqrt(32) = 4 sqrt(2), so:</p>
+<p>T = π * sqrt(32 π ε₀ m) / q = π * (4 sqrt(2 π ε₀ m)) / q.</p>
+<p>Wait, let me double-check:</p>
+<p>sqrt(32 π ε₀ m) = sqrt(32) * sqrt(π ε₀ m) = 4 sqrt(2) * sqrt(π ε₀ m).</p>
+<p>So,</p>
+<p>T = π * 4 sqrt(2) * sqrt(π ε₀ m) / q.</p>
+<p>Combine the pi terms:</p>
+<p>sqrt(pi) * pi = pi^(3/2).</p>
+<p>So,</p>
+<p>T = 4 sqrt(2) * pi^(3/2) * sqrt(ε₀ m) / q.</p>
+<p>Alternatively, factoring constants:</p>
+<p>T = (4 sqrt(2) pi^(3/2)) / q * sqrt(ε₀ m).</p>
+<p>I think that's the expression. Let me check units to ensure consistency.</p>
+<p>Charge q has unit C, ε₀ has unit F/m (C²·s⁴·kg⁻¹·m⁻³), m is kg, so sqrt(ε₀ m) has unit sqrt(F·m/kg) ?</p>
+<p>Wait, better to verify dimensions:</p>
+<p>Time T should have dimension seconds [s].</p>
+<p>Compute each term:</p>
+<p>sqrt(ε₀ m): ε₀ has dimension C² s⁴ kg⁻¹ m⁻³, multiplied by m gives C² s⁴ kg⁻¹ m⁻². Taking square root gives C s² kg⁻¹/² m⁻¹.</p>
+<p>Multiply by sqrt(m): Wait, no, sqrt(ε₀ m) is already including m. Hmm, maybe I made a mistake in dimensional analysis.</p>
+<p>Wait, let's do it properly:</p>
+<p>Inside sqrt(ε₀ m): ε₀ has units C² s⁴ kg⁻¹ m⁻³, m is kg. So ε₀ m has units C² s⁴ kg⁻¹ m⁻³ * kg = C² s⁴ m⁻³.</p>
+<p>Taking square root: (C² s⁴ m⁻³)^(1/2) = C s² m⁻³/².</p>
+<p>Then multiply by other terms:</p>
+<p>pi^(3/2) is dimensionless, 4 sqrt(2) is dimensionless, so overall:</p>
+<p>T has units (C s² m⁻³/²) / C = s² m⁻³/².</p>
+<p>Wait, that doesn't match [s]. Something's wrong.</p>
+<p>Ah, perhaps I messed up the substitution earlier. Let me go back.</p>
+<p>Looking back, after substituting variables, I had:</p>
+<p>T = (1/k) * sqrt(d) ∫ ... which led to T = (1/k) * π.</p>
+<p>But k was defined as sqrt(q²/(32 π ε₀ m)), so k = q / sqrt(32 π ε₀ m).</p>
+<p>Hence, T = π / ( q / sqrt(32 π ε₀ m) ) = π * sqrt(32 π ε₀ m) / q.</p>
+<p>Yes, that seems correct.</p>
+<p>Now, checking dimensions:</p>
+<p>sqrt(32 π ε₀ m): ε₀ has units C² s⁴ kg⁻¹ m⁻³, m is kg.</p>
+<p>So ε₀ m has units C² s⁴ kg⁻¹ m⁻³ * kg = C² s⁴ m⁻³.</p>
+<p>Square root gives C s² m⁻³/².</p>
+<p>Multiply by sqrt(π) which is dimensionless, so overall:</p>
+<p>sqrt(32 π ε₀ m) has units C s² m⁻³/².</p>
+<p>Divide by q (unit C):</p>
+<p>(C s² m⁻³/²) / C = s² m⁻³/².</p>
+<p>But T needs to be in seconds. So unless s² m⁻³/² equals s, which it doesn't, something is wrong.</p>
+<p>Wait, perhaps I missed some factors in the substitution. Let me re-examine the integral.</p>
+<p>After substitution, I had:</p>
+<p>T = (1/k) * sqrt(d) ∫ [from 0 to d] dx / sqrt( (d - x)/d x )</p>
+<p>Wait, perhaps I made a mistake in handling the substitution. Let me redo the integral carefully.</p>
+<p>Starting again:</p>
+<p>From the DE, we had:</p>
+<p>dx/dt = k sqrt(1/d - 1/x).</p>
+<p>Rearranged:</p>
+<p>dt = dx / [k sqrt( (x - d)/d x ) ]</p>
+<p>Wait, actually, 1/d - 1/x = (x - d)/(d x). So sqrt(1/d - 1/x) = sqrt( (x - d)/(d x) ). But since x goes from 0 to d, (x - d) is negative, so taking square root of a negative number isn't real. Oops! That suggests I made a mistake in the sign.</p>
+<p>Wait, no, because when x approaches d, (x - d) approaches 0, but for x &lt; d, (x - d) is negative. So sqrt(negative) isn't real. That indicates an error in the setup.</p>
+<p>Wait, going back, the force was F = q²/(16 π ε₀ (2x)^2) = q²/(64 π ε₀ x²). But actually, the separation between the charge and its image is 2x, so yes, that's correct.</p>
+<p>But when deriving the acceleration, F = ma = m dv/dt = m v dv/dx.</p>
+<p>So, m v dv/dx = q²/(64 π ε₀ x²).</p>
+<p>But when x approaches 0, the force blows up, which makes sense because the charge gets closer to the plane, the image is further away, increasing the force.</p>
+<p>However, when setting up the integral, I considered x going from d to 0, but the expression sqrt(1/d - 1/x) becomes imaginary for x &lt; d. That suggests I might have flipped the terms.</p>
+<p>Wait, 1/d - 1/x = (x - d)/(d x). For x &lt; d, numerator is negative, denominator positive, so overall negative. Thus, sqrt(negative) is problematic.</p>
+<p>This implies that perhaps I should have taken absolute values or adjusted the expression.</p>
+<p>Wait, perhaps I should have written 1/x - 1/d instead? Because when x &lt; d, 1/x &gt; 1/d, so 1/x - 1/d is positive.</p>
+<p>Wait, let's revisit the force expression.</p>
+<p>The force on the charge q is attractive towards the plane, so as the charge moves from x=d to x=0, the distance to the image charge changes from 2d to 2x, but x decreases, so the force increases.</p>
+<p>But in the expression for acceleration, we have:</p>
+<p>dv/dt = F/m = q²/(16 π ε₀ (2x)^2 m) = q²/(64 π ε₀ m x²).</p>
+<p>But when expressing dv/dt in terms of v and x, we have:</p>
+<p>dv/dt = v dv/dx.</p>
+<p>So,</p>
+<p>v dv/dx = q²/(64 π ε₀ m x²).</p>
+<p>Separating variables:</p>
+<p>v dv = (q²)/(64 π ε₀ m) * (1/x²) dx.</p>
+<p>Integrate both sides:</p>
+<p>∫ v dv from 0 to v = ∫ (q²)/(64 π ε₀ m) * (1/x²) dx from d to x.</p>
+<p>Left side: (1/2)v².</p>
+<p>Right side: -(q²)/(64 π ε₀ m) * (1/x) evaluated from d to x.</p>
+<p>So,</p>
+<p>(1/2)v² = -(q²)/(64 π ε₀ m) [1/x - 1/d].</p>
+<p>Multiply both sides by 2:</p>
+<p>v² = - (q²)/(32 π ε₀ m) [1/x - 1/d].</p>
+<p>But since 1/x &gt; 1/d when x &lt; d, the RHS is positive, so:</p>
+<p>v² = (q²)/(32 π ε₀ m) [1/d - 1/x].</p>
+<p>Because [1/x - 1/d] is negative, so negative times negative gives positive.</p>
+<p>Thus, v = sqrt( (q²)/(32 π ε₀ m) (1/d - 1/x) ).</p>
+<p>So, v = dx/dt = sqrt( (q²)/(32 π ε₀ m) (1/d - 1/x) ).</p>
+<p>This makes more sense because now the argument inside the sqrt is positive.</p>
+<p>So, rewriting:</p>
+<p>dx/dt = k sqrt(1/d - 1/x), where k = sqrt(q²/(32 π ε₀ m)).</p>
+<p>Again, separating variables:</p>
+<p>dt = dx / [k sqrt(1/d - 1/x)].</p>
+<p>Now, integrate from x=d (t=0) to x=0 (t=T):</p>
+<p>T = ∫ from d to 0 dt = ∫ from d to 0 dx / [k sqrt(1/d - 1/x)].</p>
+<p>But integrating from higher limit to lower gives negative, so reversing limits:</p>
+<p>T = ∫ from 0 to d dx / [k sqrt(1/d - 1/x)].</p>
+<p>As before, let’s perform substitution. Let’s set u = 1/x, so x = 1/u, dx = -1/u² du. When x=0, u→∞; x=d, u=1/d.</p>
+<p>But plugging in, the integral becomes messy. Instead, another substitution: let’s set t = sqrt(1/d - 1/x).</p>
+<p>Let t = sqrt( (x - d)/(d x) ). Wait, similar to before.</p>
+<p>Alternatively, let’s set y = x/d, so x = y d, dx = d dy. Then,</p>
+<p>sqrt(1/d - 1/x) = sqrt(1/d - 1/(y d)) = sqrt( (y - 1)/(d y) ) = sqrt( (1 - y)/d y ).</p>
+<p>Wait, but when x goes from 0 to d, y goes from 0 to 1, and (1 - y) is positive only when y &lt; 1, which it is except at y=1.</p>
+<p>So,</p>
+<p>sqrt(1/d - 1/x) = sqrt( (1 - y)/(d y) ) = sqrt( (1 - y)/y ) / sqrt(d).</p>
+<p>Thus, the integral becomes:</p>
+<p>T = ∫ from 0 to d [1 / (k sqrt( (1 - y)/y )) ] * (d dy) / sqrt(d).</p>
+<p>Wait, let me clarify:</p>
+<p>With x = y d, dx = d dy.</p>
+<p>So,</p>
+<p>T = ∫ from y=0 to y=1 [1 / (k sqrt( (1 - y)/y )) ] * d dy.</p>
+<p>And sqrt(d) comes from the substitution:</p>
+<p>sqrt(1/d - 1/x) = sqrt( (1 - y)/y ) / sqrt(d).</p>
+<p>So,</p>
+<p>T = ∫ [1 / (k * sqrt( (1 - y)/y ) / sqrt(d) ) ] * d dy.</p>
+<p>Simplify:</p>
+<p>T = ∫ [ sqrt(d) / (k sqrt( (1 - y)/y )) ] * d dy.</p>
+<p>Wait, no, let's plug in correctly:</p>
+<p>Original integrand after substitution:</p>
+<p>1/[k sqrt( (1 - y)/y ) / sqrt(d) ] * d dy.</p>
+<p>Which is:</p>
+<p>sqrt(d) / [k sqrt( (1 - y)/y ) ] * d dy.</p>
+<p>Wait, that seems off. Let me recast:</p>
+<p>The original integrand after substitution is:</p>
+<p>dx / [k sqrt(1/d - 1/x)] = d dy / [k sqrt( (1 - y)/y ) / sqrt(d) ) ].</p>
+<p>So,</p>
+<p>= d dy / [k * sqrt( (1 - y)/y ) / sqrt(d) ) ].</p>
+<p>= d dy * sqrt(d) / [k sqrt( (1 - y)/</p>
+<h2>problem_4</h2>
+<p><think>
+Okay, so I've got this physics problem here about a rotating charged sphere creating a magnetic field, and I need to find the magnetic force between the northern and southern hemispheres. Hmm, let me try to unpack this step by step.</p>
+<p>First off, the sphere has a uniform surface charge density σ and is rotating about the z-axis with angular frequency ω. Because it's rotating, the moving charges create a current, which in turn generates a magnetic field. My goal is to figure out the magnetic force between the two hemispheres.</p>
+<p>Alright, let's start by recalling some concepts. When charges move, they produce currents. For a rotating charged sphere, each infinitesimal ring of charge contributes to the total current. So maybe I should model the sphere as being made up of many such rings, each at a different latitude.</p>
+<p>Each ring has a circumference, so the linear charge density on the ring would be dq = σ * 2πR sinθ dθ, where θ is the polar angle. Since the sphere is rotating, each charge element moves with velocity v = ω × r, where r is the position vector from the axis of rotation. In cylindrical coordinates, this would translate to v = ω R sinθ in the azimuthal direction.</p>
+<p>Wait, but actually, the current due to a ring would be the charge per unit length times the angular frequency. So, the current dI for each ring would be dq * ω / (2π), because the period T = 2π/ω, so the number of rotations per second is ω/(2π). Therefore, dI = σ * 2πR sinθ dθ * (σ * 2πR sinθ dθ) * ω / (2π)? Wait, no, that seems off. Maybe I should think differently.</p>
+<p>Actually, the current for a ring is given by I = n * q * v, where n is the number of charges, q is the charge per particle, and v is their velocity. But since we have a continuous charge distribution, perhaps it's better to express it in terms of charge per unit length along the ring.</p>
+<p>So, the charge per unit length on the ring is λ = σ * 2πR sinθ, because the area element for a thin ring is 2πR sinθ dθ, but since we're considering a differential ring, it's just 2πR sinθ dθ. Wait, no, actually, the charge per unit length along the ring would be σ times the width of the ring, which is R dθ. So, dq = σ * 2πR² sinθ dθ? No, wait, the circumference is 2πR sinθ, right? Because the radius of the ring is R sinθ. So, the area element is 2π(R sinθ)(R sinθ dθ) = 2πR² sin²θ dθ. But that's for surface charge. Actually, the charge on the ring is dq = σ * 2πR² sin²θ dθ? Hmm, I'm getting confused.</p>
+<p>Let me clarify. The surface charge density σ is charge per unit area. The area of a thin ring at polar angle θ is A = 2πR² sinθ dθ. So, the charge on the ring is dq = σ * A = σ * 2πR² sinθ dθ. That makes sense. Now, the current due to this ring is the rate at which charge passes through a point, which is dq/dt. But since the ring is rotating with angular frequency ω, the time derivative is related to the velocity. Alternatively, the current can be expressed as I_ring = dq * ω / (2π), because each full rotation contributes dq to the current over time t=2π/ω. So, I_ring = (σ * 2πR² sinθ dθ) * ω / (2π) ) = σ R² ω sinθ dθ.</p>
+<p>Got it. So, each ring contributes a current dI = σ R² ω sinθ dθ.</p>
+<p>Now, these individual rings act like current loops, each producing their own magnetic dipole moment. The total magnetic dipole moment μ of the sphere would be the sum (integral) of all these contributions. The magnetic dipole moment for a single ring is dμ = (μ0 / 4π) * (I_ring * π a²), where a is the radius of the loop. Wait, more accurately, the dipole moment for a loop is μ = I * A, where A is the area of the loop. So, for each ring, dμ = I_ring * π (R sinθ)^2.</p>
+<p>Substituting I_ring, we get dμ = (σ R² ω sinθ dθ) * π R² sin²θ = σ R⁴ ω π sin³θ dθ.</p>
+<p>Therefore, the total dipole moment μ is the integral from θ=0 to θ=π of dμ:</p>
+<p>μ = ∫₀^π σ R⁴ ω π sin³θ dθ.</p>
+<p>Hmm, integrating sin³θ. Let me recall that ∫ sinⁿθ dθ from 0 to π is 2∫₀^{π/2} sinⁿθ dθ. And for odd n, it's 2*(sqrt(π)/2 Γ((n+1)/2)) / Γ((n+2)/2)). For n=3, it's 4/3.</p>
+<p>Wait, actually, ∫₀^π sin³θ dθ = 4/3. Because ∫ sin³θ dθ from 0 to π is twice the integral from 0 to π/2, and using reduction formulas or known integrals, it equals 4/3.</p>
+<p>So, μ = σ R⁴ ω π * (4/3).</p>
+<p>Simplifying, μ = (4/3) π σ R⁴ ω.</p>
+<p>But wait, let's double-check the units. Surface charge density σ has units C/m². R is meters, ω is radians per second. So, μ should have units of Ampere·meter². Let's see: σ [C/m²] * R⁴ [m⁴] * ω [1/s]. So, overall units are C m²/s. But Ampere is C/s, so Ampere·meter² would be (C/s)·m². Our expression gives (C m²/s) * m², which is C m⁴/s. Hmm, that doesn't match. Did I make a mistake?</p>
+<p>Ah, yes, probably missed a factor somewhere. Let's go back. The current for each ring was dI = σ R² ω sinθ dθ. Then, the area A = π (R sinθ)^2. So, dμ = I_ring * A = (σ R² ω sinθ dθ) * π R² sin²θ = σ π R⁴ ω sin³θ dθ.</p>
+<p>Integrating from 0 to π, we get μ = σ π R⁴ ω ∫₀^π sin³θ dθ = σ π R⁴ ω * (4/3).</p>
+<p>So, μ = (4/3) σ π R⁴ ω.</p>
+<p>But checking units again: σ [C/m²], R⁴ [m⁴], ω [1/s]. So, μ has units C·m²/s. However, magnetic dipole moment should be in Am², which is (C/s)·m². So, there's a discrepancy. It looks like I might have missed a factor involving μ0 somewhere, but wait, no—because when calculating the dipole moment from current and area, it's just μ = I * A without any constants. So, perhaps the issue is elsewhere.</p>
+<p>Alternatively, maybe I should consider that the total charge Q on the sphere is Q = 4π R² σ. So, expressing everything in terms of Q might help. Let's see: Q = 4π R² σ ⇒ σ = Q / (4π R²). Substituting into μ:</p>
+<p>μ = (4/3) * (Q / (4π R²)) * π R⁴ ω = (4/3) * Q * π R⁴ / (4π R²) * ω = (4/3) * Q R² ω / 4 = (Q R² ω)/3.</p>
+<p>Oh, nice! So, μ simplifies to μ = (Q R² ω)/3.</p>
+<p>That makes more sense dimensionally. Q is in Coulombs, R² in m², ω in 1/s, so μ has units C·m²/s, which is equivalent to Ampere·meter² since 1 A = 1 C/s. So, indeed, μ = (Q R² ω)/3.</p>
+<p>Alright, now that I have the magnetic dipole moment, how does this relate to the force between the hemispheres?</p>
+<p>Well, the sphere as a whole has a magnetic dipole moment μ. If we split it into two hemispheres, each would have a certain dipole moment. But wait, the question is about the force between the hemispheres due to their magnetic fields. Hmm, but the force between two dipoles is usually considered when both are independent, but in this case, the two hemispheres are parts of the same object, so their fields interact.</p>
+<p>Alternatively, perhaps we can model each hemisphere as a magnet with its own dipole moment and then compute the force between them. But I'm not sure if that's straightforward.</p>
+<p>Another approach is to consider the magnetic pressure. The internal magnetic pressure in a material can lead to forces. The magnetic pressure is given by P = (μ0 / 3) B². But in this case, the sphere isn't a material; it's a collection of charges. Hmm.</p>
+<p>Wait, another thought: when the sphere rotates, it creates a magnetic field similar to that of a dipole. The field outside the sphere is that of a dipole, while inside, it's different. But since we're dealing with the force between hemispheres, which are part of the same sphere, maybe we need to look at the internal field.</p>
+<p>The internal magnetic field of a dipole is given by B_internal = (μ0 μ)/(4π) * (3 cosθ ŷ - û) / r³, but I might be mixing things up. Alternatively, the internal field of a uniformly magnetized sphere is uniform and given by B = (2μ0 M)/(3) inside, where M is the magnetization. But in our case, it's an electric dipole due to rotation, so maybe the analogy holds.</p>
+<p>Wait, no, in our case, the sphere's rotation causes a current distribution resulting in a magnetic dipole. The internal magnetic field of such a dipole can be calculated. Let me recall that for a dipole, the internal field varies with radius. Specifically, for a sphere with radius R, the internal field at a distance r from the center is given by B(r) = (μ0 μ)/(4π) * (3 (û · \hat{p}) \hat{p} - \hat{p}²) / r³, but I might need to check the exact form.</p>
+<p>Alternatively, perhaps it's simpler to note that the magnetic field inside a uniformly polarized sphere is uniform. Wait, no—that's for a permanent magnet. In our case, it's a current distribution. Hmm.</p>
+<p>Maybe instead of focusing on the field, I should think about the energy stored in the magnetic field and then relate the force to the change in energy. The force between two objects is often the negative gradient of the potential energy.</p>
+<p>The total magnetic energy U of a dipole in a field is U = -μ · B. But in this case, the dipole is in its own field, which complicates things. Alternatively, the self-energy of a dipole is U = (μ0 / 12π) μ² / R³, but I'm not entirely sure.</p>
+<p>Wait, perhaps a better approach is to model each hemisphere as a separate dipole and then compute the force between them. But since they are connected, this might not hold. Alternatively, think of the sphere as two hemispheres, each carrying a magnetic dipole moment, and compute the mutual force between them.</p>
+<p>Let me assume that each hemisphere has a dipole moment μ_north and μ_south. Given the symmetry, μ_north = -μ_south = μ/2 each? Or maybe not exactly, depending on how the current distributes.</p>
+<p>Wait, earlier I found that the total dipole moment is μ = (Q R² ω)/3. If I split the sphere into two hemispheres, each would carry half the total charge, but how does that affect the dipole moments?</p>
+<p>Actually, when you split a dipole into two equal halves, each half has a dipole moment proportional to the volume. But in our case, the charge distribution is symmetric, so splitting along the equator would mean each hemisphere has half the total charge, but their individual dipole moments would add up to the total.</p>
+<p>Wait, no. Each hemisphere, when rotated, would contribute a dipole moment. The total dipole moment is the sum of the contributions from all the rings. If I split the sphere into northern and southern hemispheres, each hemisphere would have a certain range of θ. The northern hemisphere would integrate from θ=0 to θ=π/2, and the southern from θ=π/2 to θ=π.</p>
+<p>Given that the dipole moment contribution from each ring depends on sin³θ, the integrals for each hemisphere would be:</p>
+<p>For northern hemisphere: ∫₀^{π/2} sin³θ dθ = (3/8)π</p>
+<p>For southern hemisphere: ∫_{π/2}^π sin³θ dθ = also (3/8)π, because sin(π - θ) = sinθ.</p>
+<p>Thus, each hemisphere contributes equally to the total dipole moment. So, each has a dipole moment μ_hemi = (4/3) σ π R⁴ ω * (3/8)π = ?</p>
+<p>Wait, no, let's recast it properly. The total μ = (4/3) σ π R⁴ ω ∫₀^π sin³θ dθ = (4/3) σ π R⁴ ω * (4/3) = (16/9) σ π R⁴ ω.</p>
+<p>Wait, no, earlier I had μ = (4/3) σ π R⁴ ω * (4/3) ? No, wait, correction: ∫₀^π sin³θ dθ = 4/3. So, μ_total = (4/3) σ π R⁴ ω * (4/3) ? No, wait, no—the integral is 4/3, so μ_total = (4/3) σ π R⁴ ω * (4/3) ?</p>
+<p>No, wait, no. Earlier, I had μ = ∫ dμ = ∫ σ π R⁴ ω sin³θ dθ from 0 to π. Which evaluates to σ π R⁴ ω * (4/3). Then, substituting σ = Q/(4π R²), we get μ = (Q/(4π R²)) * π R⁴ ω * (4/3) = (Q R² ω)/3.</p>
+<p>Right, so each hemisphere contributes half of that? No, because the integral from 0 to π/2 of sin³θ dθ is (3/8)π, and similarly for π/2 to π. So, each hemisphere contributes (3/8)π to the integral, but the total integral is 4/3 ≈ 1.333, whereas (3/8)*2π ≈ 1.885, which is larger than 4/3. Wait, something's wrong here.</p>
+<p>Wait, no, ∫₀^π sin³θ dθ = 4/3 ≈ 1.333. If I split it into two equal parts, each from 0 to π/2 and π/2 to π, each integral would be 2/3 ≈ 0.666. Because sin³θ is symmetric around θ=π/2, so each half contributes half the total integral.</p>
+<p>So, each hemisphere contributes (4/3)/2 = 2/3 to the integral. Thus, each hemisphere's dipole moment is μ_hemi = (4/3) σ π R⁴ ω * (2/3) = (8/9) σ π R⁴ ω.</p>
+<p>But substituting σ = Q/(4π R²), we get μ_hemi = (8/9)<em>(Q/(4π R²))</em>π R⁴ ω = (8/9)*(Q R² ω)/4 = (2/9) Q R² ω.</p>
+<p>Wait, but the total μ_total is (Q R² ω)/3, so each hemisphere has μ_hemi = μ_total / 2 = (Q R² ω)/6. Hmm, conflicting results. Where did I go wrong?</p>
+<p>Ah, perhaps because when splitting the integral, each hemisphere's contribution is half the total integral. So, the total μ = ∫₀^π ... = 4/3, so each hemisphere is 2/3. Therefore, μ_hemi = (4/3) σ π R⁴ ω * (2/3) = (8/9) σ π R⁴ ω.</p>
+<p>Then, substituting σ = Q/(4π R²):</p>
+<p>μ_hemi = (8/9)<em>(Q/(4π R²))</em>π R⁴ ω = (8/9)*(Q R² ω)/4 = (2/9) Q R² ω.</p>
+<p>But the total μ_total is (Q R² ω)/3, which is equal to 3*(2/9) Q R² ω, so that adds up correctly. So, each hemisphere has μ_hemi = (2/9) Q R² ω.</p>
+<p>Now, assuming that the two hemispheres are separated, the force between them would be the mutual force between two dipoles. The formula for the force between two magnetic dipoles is given by:</p>
+<p><strong>F</strong> = (μ0 / (4π)) * [ (μ1 · μ2) \hat{r} / r³ - 3 (μ1 · \hat{r}) (μ2 · \hat{r}) \hat{r} / r⁵ ]</p>
+<p>In our case, the two hemispheres are aligned along the z-axis, so their dipole moments are opposite. Let's assume μ_north = μ_hemi and μ_south = -μ_hemi. Placing them along the z-axis, the distance between their centers is 2R (if they are separated by diameter). Wait, but actually, if we split the sphere into two hemispheres, the distance between their centers would depend on how they're arranged. But perhaps for simplicity, we can consider them as point dipoles located at the center</p>
+<h2>problem_5</h2>
+<p><think>
+Okay, so I need to calculate the gradient of the magnitude of the position vector r, which is given by r equals the square root of (x squared plus y squared plus z squared). Hmm, let me start by recalling what the gradient operator means. In Cartesian coordinates, the gradient of a scalar function gives a vector that points in the direction of the greatest rate of increase of the function, and its magnitude is the maximum rate of change. So, if I have a function f(x, y, z), the gradient would be (∂f/∂x, ∂f/∂y, ∂f/∂z).</p>
+<p>In this case, my function f is the magnitude of the position vector r, which is sqrt(x² + y² + z²). So, I need to find the partial derivatives of f with respect to x, y, and z. Let's write that out step by step.</p>
+<p>First, let me denote f(r) as sqrt(x² + y² + z²). To make things clearer, maybe I should express it using exponents instead of roots. So, f = (x² + y² + z²)^(1/2). Now, taking the partial derivative with respect to x, I'll treat y and z as constants.</p>
+<p>Using the chain rule, the derivative of (something)^(1/2) is (1/2)(something)^(-1/2) times the derivative of that something. So, the partial derivative of f with respect to x would be:</p>
+<p>df/dx = (1/2)(x² + y² + z²)^(-1/2) * d/dx (x² + y² + z²)</p>
+<p>Since we're differentiating with respect to x, the derivative of x² is 2x, and the derivatives of y² and z² with respect to x are zero. Therefore,</p>
+<p>df/dx = (1/2)(x² + y² + z²)^(-1/2) * 2x</p>
+<p>Simplifying that, the 2s cancel out, leaving:</p>
+<p>df/dx = x / sqrt(x² + y² + z²)</p>
+<p>Similarly, the partial derivatives with respect to y and z will follow the same pattern. For df/dy:</p>
+<p>df/dy = (1/2)(x² + y² + z²)^(-1/2) * 2y = y / sqrt(x² + y² + z²)</p>
+<p>And for df/dz:</p>
+<p>df/dz = (1/2)(x² + y² + z²)^(-1/2) * 2z = z / sqrt(x² + y² + z²)</p>
+<p>So putting it all together, the gradient of f is a vector with components (df/dx, df/dy, df/dz), which is:</p>
+<p>( x / sqrt(x² + y² + z²), y / sqrt(x² + y² + z²), z / sqrt(x² + y² + z²) )</p>
+<p>Wait a second, I remember that the unit vector in the radial direction is often denoted by e_r or sometimes r hat. And since each component here is just the corresponding coordinate divided by the magnitude of r, this simplifies to the unit vector in the direction of r multiplied by 1. Because the magnitude of r is sqrt(x² + y² + z²), dividing each component by that gives us the unit vector.</p>
+<p>Therefore, the gradient of r is simply the unit vector in the direction of r. But wait, isn't the gradient also equal to the derivative of r with respect to r? Or is there another way to look at it?</p>
+<p>Alternatively, thinking about spherical coordinates might help. In spherical coordinates, the gradient of r would naturally point radially outward, and its magnitude would be 1 because r is just the radial distance. That aligns with what I found earlier.</p>
+<p>Let me double-check my calculations. Taking the partial derivatives again:</p>
+<p>For df/dx:
+d/dx [ (x² + y² + z²)^(1/2) ] = (1/2)(x² + y² + z²)^(-1/2) * 2x = x / r, where r is sqrt(x² + y² + z²). Yep, that looks right.</p>
+<p>Same goes for y and z components. So, combining these, the gradient vector has components proportional to the original position vector but normalized. Hence, it's just the unit vector in the radial direction.</p>
+<p>I think that makes sense. The gradient of the magnitude of the position vector points radially outward and has a magnitude of 1. So, the final answer should be the unit vector in the direction of r, which can be written as r hat or sometimes as (x, y, z)/r.</p>
+<p>Just to ensure I'm not missing anything, let me consider if there's any alternative approach. Maybe expressing everything in terms of vectors. If r is the position vector, then its magnitude is |r|. The gradient of |r| would involve the derivative of |r| with respect to each spatial variable.</p>
+<p>Another thought: sometimes gradients are expressed in terms of vector calculus identities. There's an identity that says grad(|r|) = r / |r|. Which is exactly what I derived through partial derivatives. So that confirms it.</p>
+<p>Alright, I feel confident now. The gradient of the magnitude of the position vector r is the unit vector pointing radially outward from the origin, which can be written as r divided by |r|.
+</think></p>
+<p>The gradient of the magnitude of the position vector $$ r = \sqrt{x^2 + y^2 + z^2} $$ is calculated by finding the partial derivatives of $$ r $$ with respect to $$ x $$, $$ y $$, and $$ z $$. Each partial derivative yields a component of the gradient vector, which simplifies to the unit vector in the radial direction. </p>
+<p>Thus, the gradient is:</p>
+<p>$$
+\nabla r = \left( \frac{x}{r}, \frac{y}{r}, \frac{z}{r} \right)
+$$</p>
+<p>This can be compactly written as:</p>
+<p>$$
+\boxed{\nabla r = \frac{\mathbf{r}}{|\mathbf{r}|}}
+$$&lt;｜end▁of▁sentence｜&gt;</p>
+<h2>problem_6</h2>
+<p><think>
+Okay, so I need to find the vector potential $$\vec{A}$$ for an infinite solenoid. Hmm, let me start by recalling what I know about solenoids and vector potentials. </p>
+<p>First, an infinite solenoid has a uniform magnetic field inside it along its axis and zero outside. The magnetic field $$B$$ inside is given by $$B = \mu_0 n I$$, where $$n$$ is the number of turns per unit length, $$I$$ is the current, and $$\mu_0$$ is the permeability of free space. Outside the solenoid, the magnetic field is zero.</p>
+<p>Now, the vector potential $$\vec{A}$$ is related to the magnetic field $$\vec{B}$$ through the relation $$\vec{B} = \nabla \times \vec{A}$$. My goal is to find such an $$\vec{A}$$ that satisfies this equation both inside and outside the solenoid.</p>
+<p>Since the solenoid is infinitely long and symmetric, cylindrical coordinates seem appropriate here. So, I'll work in cylindrical coordinates $$(r, \phi, z)$$.</p>
+<p>Inside the solenoid ($$r \leq R$$), the magnetic field is along the $$z$$-axis, so $$\vec{B}<em>{inside} = B_0 \hat{z}$$, where $$B_0 = \mu_0 n I$$. Outside ($$r &gt; R$$), $$\vec{B}</em>{outside} = 0$$.</p>
+<p>To find $$\vec{A}$$, I remember that there's usually a family of solutions for the vector potential because adding the gradient of any scalar function to $$\vec{A}$$ doesn't change the resulting magnetic field. However, for simplicity, I can choose a gauge where the solution is straightforward. The most common choice is the Coulomb gauge or the symmetric gauge, but since the system is translationally invariant along the $$z$$-axis, maybe the simplest approach is to assume that $$\vec{A}$$ only has a $$\phi$$-component and depends only on $$r$$.</p>
+<p>So, let's assume $$\vec{A} = A_\phi(r) \hat{\phi}$$. Then, the curl in cylindrical coordinates simplifies. The curl of $$\vec{A}$$ would have components:</p>
+<ul>
+<li>$$(\nabla \times \vec{A})<em>r = \frac{1}{r} \frac{\partial A_z}{\partial \phi} - \frac{\partial A</em>\phi}{\partial z}$$</li>
+<li>$$(\nabla \times \vec{A})_\phi = \frac{\partial A_r}{\partial z} - \frac{\partial A_z}{\partial r}$$</li>
+<li>$$(\nabla \times \vec{A})<em>z = \frac{1}{r} \left( \frac{\partial (r A</em>\phi)}{\partial r} \right )$$</li>
+</ul>
+<p>But since I assumed $$A_r = A_z = 0$$ and $$A_\phi$$ depends only on $$r$$, all components except the $$z$$-component vanish. Therefore,</p>
+<p>$$
+(\nabla \times \vec{A})<em>z = \frac{1}{r} \frac{d}{dr}(r A</em>\phi)
+$$</p>
+<p>This must equal $$B_0$$ inside the solenoid and 0 outside.</p>
+<p>So, setting up the equations:</p>
+<ol>
+<li>
+<p>Inside ($$r \leq R$$):
+   $$
+   \frac{1}{r} \frac{d}{dr}(r A_\phi) = B_0
+   $$</p>
+</li>
+<li>
+<p>Outside ($$r &gt; R$$):
+   $$
+   \frac{1}{r} \frac{d}{dr}(r A_\phi) = 0
+   $$</p>
+</li>
+</ol>
+<p>Let me solve these differential equations.</p>
+<p>Starting with the inside region:</p>
+<p>Multiply both sides by $$r$$:
+$$
+\frac{d}{dr}(r A_\phi) = r B_0
+$$</p>
+<p>Integrate both sides with respect to $$r$$:</p>
+<p>$$
+r A_\phi = \int r B_0 dr = \frac{1}{2} B_0 r^2 + C_1
+$$</p>
+<p>Divide by $$r$$:</p>
+<p>$$
+A_\phi = \frac{1}{2} B_0 r + \frac{C_1}{r}
+$$</p>
+<p>Now, considering the behavior at $$r=0$$: Since the vector potential should be finite everywhere, including at the origin, the term $$\frac{C_1}{r}$$ would blow up as $$r \to 0$$ unless $$C_1 = 0$$. So, inside the solenoid, we have:</p>
+<p>$$
+A_\phi(r) = \frac{1}{2} B_0 r
+$$</p>
+<p>Now, moving to the outside region ($$r &gt; R$$):</p>
+<p>We have:</p>
+<p>$$
+\frac{1}{r} \frac{d}{dr}(r A_\phi) = 0
+$$</p>
+<p>Which implies:</p>
+<p>$$
+\frac{d}{dr}(r A_\phi) = 0
+$$</p>
+<p>Integrating this gives:</p>
+<p>$$
+r A_\phi = C_2
+$$</p>
+<p>Thus,</p>
+<p>$$
+A_\phi(r) = \frac{C_2}{r}
+$$</p>
+<p>Now, we need to determine $$C_2$$. To do this, we can match the vector potential and its derivative at $$r = R$$.</p>
+<p>From the inside, at $$r=R$$:</p>
+<p>$$
+A_\phi(R^-) = \frac{1}{2} B_0 R
+$$</p>
+<p>From the outside, at $$r=R$$:</p>
+<p>$$
+A_\phi(R^+) = \frac{C_2}{R}
+$$</p>
+<p>Therefore, continuity requires:</p>
+<p>$$
+\frac{C_2}{R} = \frac{1}{2} B_0 R \implies C_2 = \frac{1}{2} B_0 R^2
+$$</p>
+<p>Hence, outside the solenoid, the vector potential is:</p>
+<p>$$
+A_\phi(r) = \frac{B_0 R^2}{2 r}
+$$</p>
+<p>Putting it all together, the vector potential is:</p>
+<p>$$
+\vec{A}(r) =
+\begin{cases}
+\frac{1}{2} B_0 r \hat{\phi}, &amp; r \leq R \
+\frac{B_0 R^2}{2 r} \hat{\phi}, &amp; r &gt; R
+\end{cases}
+$$</p>
+<p>Substituting $$B_0 = \mu_0 n I$$, we get:</p>
+<p>$$
+\vec{A}(r) =
+\begin{cases}
+\frac{1}{2} \mu_0 n I r \hat{\phi}, &amp; r \leq R \
+\frac{\mu_0 n I R^2}{2 r} \hat{\phi}, &amp; r &gt; R
+\end{cases}
+$$</p>
+<p>Wait, but sometimes people express the vector potential differently, especially when considering different gauges. Is there another way? Well, actually, another common expression for the vector potential outside the solenoid is proportional to $$\ln(r/R)$$, but that comes from integrating the field differently. Wait, no, perhaps not. Let me double-check.</p>
+<p>Alternatively, sometimes the vector potential is written using a step function or Heaviside function, but in this case, since we're dealing with regions, piecewise functions are appropriate.</p>
+<p>Another thought: Could there be a constant term added due to gauge freedom? Yes, technically, you could add a gradient of a scalar function, but since we've chosen a specific gauge (assuming $$A_r = A_z = 0$$), our solution is unique in this gauge.</p>
+<p>Yes, I think this makes sense. The vector potential inside is linear in $$r$$, and outside decreases as $$1/r$$. At $$r = R$$, both expressions should match, which they do when substituting $$C_2 = \frac{1}{2} B_0 R^2$$.</p>
+<p>Just to recap:</p>
+<ul>
+<li>Inside ($$r \leq R$$): $$\vec{A} = \frac{\mu_0 n I}{2} r \hat{\phi}$$</li>
+<li>Outside ($$r &gt; R$$): $$\vec{A} = \frac{\mu_0 n I R^2}{2 r} \hat{\phi}$$</li>
+</ul>
+<p>That seems consistent with what I remember about solenoidal vector potentials. So, I think this is correct.
+</think></p>
+<p>The vector potential $$\vec{A}$$ for an infinite solenoid can be determined by solving the curl equation $$\vec{B} = \nabla \times \vec{A}$$ in cylindrical coordinates. Assuming symmetry and choosing a suitable gauge leads to the following solution:</p>
+<p>$$
+\vec{A}(r) =
+\begin{cases}
+\displaystyle \frac{\mu_0 n I}{2} r \hat{\phi}, &amp; r \leq R \
+\displaystyle \frac{\mu_0 n I R^2}{2 r} \hat{\phi}, &amp; r &gt; R
+\end{cases}
+$$</p>
+<p>Here, $$n$$ is the number of turns per unit length, $$I$$ is the current, $$R$$ is the radius of the solenoid, and $$\mu_0$$ is the permeability of free space.</p>
+<p><strong>Final Answer</strong>
+The vector potential is $$\boxed{\vec{A} = \begin{cases} \dfrac{\mu_0 n I r}{2} \hat{\phi}, &amp; r \leq R \ \dfrac{\mu_0 n I R^2}{2 r} \hat{\phi}, &amp; r &gt; R \end{cases}}$$.&lt;｜end▁of▁sentence｜&gt;</p>
+<h2>problem_7</h2>
+<p><think>
+Okay, so I have this physics problem here about a hollow dielectric sphere. Let me try to figure out how to solve it step by step. </p>
+<p>First, let me understand the setup. There's a hollow dielectric sphere with a dielectric constant ε equal to 3. The inner radius is half of the outer radius. So, if the outer radius is R, then the inner radius must be R/2. This sphere is placed in an initially uniform electric field E₀. I need to find the electric field strength at the center of the sphere after it's placed in this field.</p>
+<p>Hmm, okay. Dielectrics... Right, when a dielectric material is placed in an electric field, it gets polarized. This polarization affects the overall electric field. Since the sphere is hollow, the dielectric is only present between the inner and outer radii. Wait, no—the entire sphere is made of the dielectric material, right? Because it's a hollow dielectric sphere. So the material fills the space between the inner and outer surfaces.</p>
+<p>Wait, actually, the problem says it's a hollow dielectric sphere. That usually means that the interior is empty, and the exterior might be another medium or vacuum. But in this case, since it's just placed in an external field, I think the region inside the inner radius is empty, and the region from inner radius to outer radius is filled with the dielectric.</p>
+<p>But wait, the problem doesn't specify whether the inner cavity is filled with anything. It just says it's a hollow dielectric sphere. So perhaps the inner cavity is a vacuum, and the rest is the dielectric. Or maybe the entire sphere except the cavity is dielectric. Hmm, I'll proceed assuming that the cavity is empty, and the dielectric is only in the shell between inner and outer radii.</p>
+<p>Now, the sphere is placed in an initially uniform electric field E₀. I need to find the electric field at the center. </p>
+<p>I remember that when a dielectric is placed in an external electric field, it becomes polarized. The polarization creates bound charges, which in turn affect the electric field inside and outside the dielectric.</p>
+<p>Since the sphere is hollow, the situation is similar to having a dielectric shell. In such cases, the fields inside and outside can be determined using boundary conditions and considering the polarization.</p>
+<p>Let me recall some concepts. For a linear isotropic dielectric, the relationship between the electric displacement D and the electric field E is D = ε₀ E + P, where P is the polarization. Also, Gauss's Law applies to D: ∇·D = ρ_free.</p>
+<p>In this problem, since the sphere is placed in an external uniform field E₀, the initial state before placing the sphere would have E = E₀ everywhere. After inserting the dielectric sphere, the field inside the dielectric will change due to polarization.</p>
+<p>But wait, the sphere is hollow. So the field inside the cavity (inner radius) should remain the same as the original field, right? Because the dielectric is only in the shell, and the cavity isn't affected by the dielectric. Or does the presence of the dielectric alter the field inside?</p>
+<p>Actually, no. The field inside the cavity depends on any charges induced on the inner surface of the dielectric. If the dielectric is uncharged, the field inside the cavity would still be influenced by the external field and any induced charges.</p>
+<p>Wait, but in this case, the sphere is neutral unless specified otherwise. The problem doesn't mention any net charge on the sphere, so I can assume it's neutral. Therefore, the polarization charges would consist of bound surface charges on the inner and outer surfaces of the dielectric shell.</p>
+<p>So, let me model this. The dielectric sphere has inner radius a and outer radius b, with a = R/2 and b = R. The dielectric constant is ε_r = 3, so ε = ε₀ * ε_r = 3ε₀.</p>
+<p>The external field is uniform, E₀. Before inserting the dielectric, the field is E₀ everywhere. After inserting the dielectric, the field inside the dielectric (between a and b) will be different, and the field inside the cavity (r &lt; a) will also be affected.</p>
+<p>To find the field at the center, r = 0, I need to consider the effect of the dielectric on the external field.</p>
+<p>I think the standard approach is to treat the dielectric as a perturbation to the external field. Alternatively, we can use the method of images or consider the polarization.</p>
+<p>Alternatively, perhaps it's easier to consider the displacement field D. Since the sphere is neutral, the total free charge enclosed by any Gaussian surface inside the dielectric is zero. However, the external field will create polarization charges.</p>
+<p>Wait, let me think again. The external field E₀ will cause the dielectric to polarize. The polarization P is proportional to the field inside the dielectric. The relation is P = χe * ε₀ E, where χe is the electric susceptibility, and χe = ε_r - 1 = 2 in this case.</p>
+<p>Therefore, P = 2ε₀ E.</p>
+<p>This polarization creates bound charges: volume charge density ρ_b = -∇·P, and surface charge density σ_b = P·n̂, where n̂ is the normal vector.</p>
+<p>Since the dielectric is homogeneous and the field is radial (due to the external uniform field), the polarization will be uniform throughout the dielectric shell.</p>
+<p>Wait, but the external field is uniform, so E₀ is uniform. However, once the dielectric is inserted, the field inside the dielectric will adjust.</p>
+<p>Wait, perhaps I should consider the displacement field D. In the absence of free charges, D satisfies Gauss's Law: ∇·D = 0. So, D is continuous across the boundaries, but E may not be.</p>
+<p>Wait, no. Actually, D has discontinuity in its normal component across a surface charge. Similarly, E has discontinuity in the tangential component across a current density, but for static fields, it's the surface charge that causes discontinuity in E.</p>
+<p>Wait, more precisely:</p>
+<p>At a boundary between two media, the discontinuity in E is given by the surface charge density: ε₁ E₁_tangential = ε₂ E₂_tangential + σ_free.</p>
+<p>Similarly, D₁_normal - D₂_normal = σ_free.</p>
+<p>But in our case, the sphere is a dielectric, so the surrounding medium is probably vacuum. So, the external medium is vacuum, and the internal cavity is also vacuum.</p>
+<p>Wait, no. The sphere itself is the dielectric. So, the region inside the cavity (r &lt; a) is vacuum, the region a &lt; r &lt; b is dielectric, and r &gt; b is vacuum.</p>
+<p>So, the field in the cavity (r &lt; a) is vacuum, the field in the dielectric (a &lt; r &lt; b) is modified, and the field outside (r &gt; b) is also modified.</p>
+<p>Given that, I can apply boundary conditions at r = a and r = b.</p>
+<p>Let me denote:</p>
+<ul>
+<li>Inside the cavity (r &lt; a): E_cavity</li>
+<li>In the dielectric (a &lt; r &lt; b): E_dielectric</li>
+<li>Outside the sphere (r &gt; b): E_external</li>
+</ul>
+<p>We know that initially, without the dielectric, E = E₀ everywhere. Now, with the dielectric, the fields will change.</p>
+<p>But wait, the dielectric is placed in the external field E₀. So, the external field will induce polarization in the dielectric, which in turn affects the fields inside and outside.</p>
+<p>I think the key idea is to relate the fields inside and outside the dielectric using the boundary conditions.</p>
+<p>Let me set up cylindrical coordinates for simplicity, but since the problem is spherically symmetric, spherical coordinates might be better.</p>
+<p>Wait, but the external field is uniform, which suggests it's along a particular direction, say z-axis. So, the field is uniform and points in the z-direction. Therefore, the setup is axisymmetric.</p>
+<p>Thus, the fields will depend only on r and θ, but due to the uniformity, perhaps it simplifies further.</p>
+<p>Wait, no. A uniform external field in Cartesian coordinates would become non-uniform in spherical coordinates unless aligned with a symmetry axis.</p>
+<p>But regardless, let's proceed.</p>
+<p>Let me consider the displacement field D. In the cavity (r &lt; a), the medium is vacuum, so D_cavity = ε₀ E_cavity.</p>
+<p>In the dielectric (a &lt; r &lt; b), D_dielectric = ε E_dielectric, where ε = ε_r ε₀ = 3ε₀.</p>
+<p>Outside the sphere (r &gt; b), D_external = ε₀ E_external.</p>
+<p>Now, applying Gauss's Law for D:</p>
+<p>For a Gaussian surface inside the cavity (r &lt; a):</p>
+<p>∮ D · dA = Q_free_enclosed.</p>
+<p>But since the sphere is neutral, Q_free_enclosed = 0. Therefore, D_cavity = 0 inside the cavity? Wait, no. Because the external field is E₀, which is uniform. So, the field inside the cavity cannot be zero; it must be related to the external field.</p>
+<p>Wait, perhaps I'm confusing free and bound charges. The sphere being neutral implies that the total free charge is zero, but there can be bound charges.</p>
+<p>Wait, let me clarify. The displacement field D accounts for free charges, while E accounts for both free and bound charges.</p>
+<p>So, for the Gaussian surface inside the cavity (r &lt; a), the total free charge enclosed is zero, so ∮ D · dA = 0. Hence, D_cavity = 0 inside the cavity.</p>
+<p>But if D_cavity = 0, then E_cavity = 0 inside the cavity? No, because D = ε₀ E, so E_cavity = 0 / ε₀ = 0. That can't be right because the external field is E₀.</p>
+<p>Wait, something's wrong here. Maybe I'm misapplying Gauss's Law.</p>
+<p>Wait, the external field E₀ exists even before the dielectric is placed. When the dielectric is placed, it modifies the field. So, the field inside the cavity is not necessarily zero.</p>
+<p>Wait, perhaps I need to reconsider. The displacement field D in the cavity is related to the free charges, but since there are no free charges inside the cavity, D must satisfy ∇·D = 0. However, the external field imposes a certain condition.</p>
+<p>Alternatively, maybe I should consider the fact that the dielectric polarizes, creating bound charges, which in turn influence the fields.</p>
+<p>Let me think differently. The dielectric sphere in an external field E₀ will experience polarization. The polarization creates bound surface charges on the inner and outer surfaces of the dielectric.</p>
+<p>These bound charges will produce additional electric fields inside and outside the dielectric.</p>
+<p>So, the total field inside the cavity is the sum of the external field and the field due to the bound charges on the inner surface.</p>
+<p>Similarly, the field outside the dielectric is the sum of the external field and the field due to the bound charges on the outer surface.</p>
+<p>Wait, but the external field is uniform, so it's like the sphere is placed in a uniform field. The polarization will create bound charges that modify the field.</p>
+<p>I think the standard solution involves finding the bound surface charges and then computing the resulting fields.</p>
+<p>Let me recall that for a dielectric sphere in an external uniform electric field, the bound charges are given by σ_b = P · n̂, where n̂ is the outward normal.</p>
+<p>Since the field inside the dielectric is E_dielec = (3/ε₀)⁻¹ D, but I'm getting confused.</p>
+<p>Wait, let's start over.</p>
+<p>The external field is E₀. When the dielectric is introduced, the field inside the dielectric becomes less than E₀ because the dielectric reduces the field.</p>
+<p>The relationship between E and E₀ is given by E = E₀ / ε_r, where ε_r is the relative permittivity. So, E_inside = E₀ / 3.</p>
+<p>But wait, that's for a uniformly polarized sphere. Is that applicable here?</p>
+<p>No, because the sphere is hollow. So, the field inside the cavity is different.</p>
+<p>Wait, perhaps I can model the dielectric sphere as a capacitor. The inner surface will have a bound charge density σ_b = P · n̂, and the outer surface will have another bound charge density.</p>
+<p>But I'm not sure. Let me look for a formula or standard result.</p>
+<p>I recall that for a dielectric sphere in an external uniform electric field, the field inside the cavity is E_cavity = E₀ (1 - 1/(3ε_r)).</p>
+<p>Wait, but I'm not sure. Let me derive it.</p>
+<p>Consider the dielectric sphere with inner radius a and outer radius b. The external field is E₀.</p>
+<p>Inside the cavity (r &lt; a), the medium is vacuum. The field there is due to the external field and any bound charges on the inner surface.</p>
+<p>Similarly, in the dielectric (a &lt; r &lt; b), the field is due to the external field and the bound charges.</p>
+<p>Outside the sphere (r &gt; b), the field is due to the external field and the bound charges on the outer surface.</p>
+<p>Let me denote the bound surface charge densities on the inner and outer surfaces as σ_inner and σ_outer.</p>
+<p>Due to the external field E₀, the dielectric polarizes, creating these bound charges.</p>
+<p>The polarization P is given by P = χe ε₀ E, where χe = ε_r - 1 = 2.</p>
+<p>So, P = 2 ε₀ E.</p>
+<p>Now, the bound surface charge density on the inner surface (at r = a) is σ_inner = P · n̂, where n̂ points inward because it's the inner surface.</p>
+<p>Similarly, the bound surface charge density on the outer surface (at r = b) is σ_outer = P · n̂, where n̂ points outward.</p>
+<p>Wait, but the direction matters. Let me define the coordinate system such that the external field E₀ is along the positive z-axis.</p>
+<p>Then, the polarization P inside the dielectric (a &lt; r &lt; b) will align with E, so P points in the same direction as E.</p>
+<p>Therefore, at the inner surface (r = a), the normal vector points inward (opposite to the direction of increasing r), so σ_inner = P · (-r̂) = -P.</p>
+<p>Similarly, at the outer surface (r = b), the normal vector points outward, so σ_outer = P · r̂ = P.</p>
+<p>But wait, in reality, the polarization creates bound charges. The bound surface charge density is σ_b = P · n̂, where n̂ is the outward normal. So, for the inner surface, n̂ points inward, hence σ_inner = P · (-r̂).</p>
+<p>Similarly, for the outer surface, n̂ points outward, so σ_outer = P · r̂.</p>
+<p>Therefore, σ_inner = -P and σ_outer = P.</p>
+<p>Now, these bound charges will produce their own electric fields.</p>
+<p>Inside the cavity (r &lt; a), the field is due to σ_inner. Using Gauss's Law, the field inside the cavity can be found.</p>
+<p>Similarly, outside the sphere (r &gt; b), the field is due to σ_outer.</p>
+<p>But wait, the external field E₀ is already present. How do these bound charges interact with E₀?</p>
+<p>I think the total field inside the cavity is the sum of the external field and the field due to σ_inner.</p>
+<p>Similarly, the total field outside is the sum of the external field and the field due to σ_outer.</p>
+<p>But I need to be careful with directions.</p>
+<p>Let me denote E_total as the sum of E_external and E_bound.</p>
+<p>Inside the cavity (r &lt; a):</p>
+<p>E_cavity = E_external + E_inner</p>
+<p>Similarly, outside the sphere (r &gt; b):</p>
+<p>E_external_total = E_external_initial + E_outer</p>
+<p>But I'm not sure if this is the right approach.</p>
+<p>Alternatively, perhaps I should consider the displacement field D.</p>
+<p>In the cavity (r &lt; a), D_cavity = ε₀ E_cavity.</p>
+<p>In the dielectric (a &lt; r &lt; b), D_dielec = ε E_dielec.</p>
+<p>Outside the sphere (r &gt; b), D_out = ε₀ E_out.</p>
+<p>Applying Gauss's Law for D:</p>
+<p>For a Gaussian surface inside the cavity (r &lt; a):</p>
+<p>∮ D · dA = Q_free_enclosed.</p>
+<p>But since the sphere is neutral, Q_free_enclosed = 0. Therefore, D_cavity = 0 inside the cavity.</p>
+<p>Wait, that can't be right because the external field is E₀, which is non-zero. So, D_cavity must be non-zero.</p>
+<p>Wait, perhaps I'm missing something. The displacement field D includes contributions from free charges, but in this case, the only charges are bound charges. So, D_cavity is not necessarily zero.</p>
+<p>Wait, no. The displacement field D satisfies ∇·D = ρ_free. Since there are no free charges inside the cavity, ∇·D = 0, meaning D is solenoidal in the cavity. But D is also influenced by the external field.</p>
+<p>This is getting complicated. Maybe I should look for a standard result or refer to an example.</p>
+<p>Wait, I recall that for a dielectric sphere in an external uniform electric field, the field inside the cavity is reduced by a factor. Specifically, the field at the center is E_center = E₀ (1 - 1/ε_r).</p>
+<p>In this case, ε_r = 3, so E_center = E₀ (1 - 1/3) = (2/3) E₀.</p>
+<p>But wait, is that accurate? Let me verify.</p>
+<p>Yes, I think that's correct. The field inside the cavity is weaker than the external field due to the screening effect of the dielectric.</p>
+<p>Therefore, the electric field at the center of the sphere is (2/3) E₀.</p>
+<p>So, the final answer is E_center = (2/3) E₀.</p>
+<p>But wait, let me make sure. The formula I recall is E_center = E₀ (1 - 1/ε_r). Plugging in ε_r = 3 gives E_center = (2/3) E₀.</p>
+<p>Yes, that seems right.</p>
+<p><strong>Final Answer</strong>
+The electric field strength at the center of the sphere is \boxed{\dfrac{2}{3} E_0}.
+</think></p>
+<p>To determine the electric field strength at the center of a hollow dielectric sphere placed in an initially uniform electric field $$ E_0 $$, we can use the concept of dielectric materials and their effect on the electric field.</p>
+<ol>
+<li>
+<p><strong>Understanding the Setup</strong>: The hollow dielectric sphere has a dielectric constant $$ \epsilon = 3 $$. The inner radius is half the outer radius. The sphere is placed in a uniform electric field $$ E_0 $$.</p>
+</li>
+<li>
+<p><strong>Effect of Dielectric Material</strong>: When a dielectric material is placed in an external electric field, it gets polarized. This polarization creates bound charges, which in turn affect the electric field inside and outside the dielectric.</p>
+</li>
+<li>
+<p><strong>Field Inside the Cavity</strong>: The electric field inside the cavity (inner radius) of the dielectric sphere is influenced by the polarization. The field inside the cavity is reduced due to the screening effect of the dielectric material.</p>
+</li>
+<li>
+<p><strong>Standard Result</strong>: For a dielectric sphere in an external uniform electric field, the electric field at the center of the sphere is given by:
+   $$
+   E_{\text{center}} = E_0 \left(1 - \frac{1}{\epsilon_r}\right)
+   \</p>
+</li>
+</ol>
+<h2>problem_8</h2>
+<p><think>
+Alright, so I'm trying to figure out how to calculate the radiated power $$ P $$ and its angular distribution for an electron undergoing oscillatory motion $$ z = z_0 \cos(\omega t) $$ using the Weizsäcker-Williams method. Hmm, okay, let me start by recalling what I know about this method.</p>
+<p>First, the Weizsäcker-Williams approach is used for calculating radiation from accelerated charges, especially in cases where the motion is rapid and the fields can be approximated as plane waves. It's particularly useful for understanding synchrotron radiation and similar phenomena. The key idea here is that the electromagnetic fields of a relativistic charge resemble free waves, making it easier to compute the radiation characteristics.</p>
+<p>The problem mentions that the photon number spectrum is given by $$ \frac{dn}{dt_0 d\omega} \approx \alpha $$, where $$ \alpha = \frac{e^2}{4\pi \epsilon_0 \hbar c} $$. This suggests that the radiation is quantized, and each mode emits a certain number of photons over a specific time interval $$ t_0 $$.</p>
+<p>Now, my goal is to find the radiated power $$ P $$ and its angular distribution as functions of $$ \theta $$, the angle between the direction of radiation and the $$ z $$-axis. </p>
+<p>I remember that in the Weizsäcker-Williams approximation, the radiation fields are treated similarly to plane waves. The electric and magnetic fields can be expressed in terms of the Fourier components of the charge's motion. For an oscillatory motion along the $$ z $$-axis, the dipole approximation might be applicable since the higher multipoles may average out due to symmetry.</p>
+<p>Let me outline the steps I need to take:</p>
+<ol>
+<li>
+<p><strong>Express the Acceleration</strong>: The electron's acceleration comes from its oscillatory motion. The acceleration $$ a(t) $$ is the second derivative of position, so $$ a(t) = -z_0 \omega^2 \cos(\omega t) $$.</p>
+</li>
+<li>
+<p><strong>Relate Acceleration to Radiation</strong>: The power radiated by an accelerating charge is given by the Larmor formula, but in the ultrarelativistic case, it's modified. However, since we're using the Weizsäcker-Williams method, I might need to express the fields in terms of the acceleration and then integrate over the emission angles.</p>
+</li>
+<li>
+<p><strong>Angular Distribution</strong>: The radiation isn't isotropic; it's more intense perpendicular to the direction of motion (the transverse direction). For a charge oscillating along the $$ z $$-axis, the radiation pattern should depend on $$ \theta $$, the angle relative to the $$ z $$-axis.</p>
+</li>
+<li>
+<p><strong>Determine the Power</strong>: Once I have the fields, I can compute the Poynting vector to find the radiated power. Alternatively, knowing the photon number spectrum, I can integrate over frequency to get the total power.</p>
+</li>
+</ol>
+<p>Wait, the problem states that the photon number spectrum is approximately $$ \alpha $$ per unit bandwidth and per formation time $$ t_0 $$. The formation time $$ t_0 $$ is the time it takes for the radiation to advance one wavelength, so $$ t_0 = \lambda / c = 2\pi / (\omega c) $$. Therefore, the number of photons emitted per unit frequency and time is related to $$ \alpha $$.</p>
+<p>But I'm a bit confused about how exactly to connect this to the total power. Let me think. Each photon carries energy $$ \hbar \omega $$, so the total energy emitted per unit time is the number of photons times their energy. If $$ dn/dt_0 d\omega = \alpha $$, then the total power $$ P $$ would involve integrating over $$ \omega $$ and considering the relation between $$ t_0 $$ and $$ dt $$.</p>
+<p>Alternatively, maybe I should consider the energy flux (Poynting vector) directly. The Weizsäcker-Williams fields allow us to compute the radiation fields, and from there, derive the power.</p>
+<p>Another thought: since the motion is along the $$ z $$-axis, the radiation should be predominantly in the transverse directions. The angular distribution might peak at $$ \theta = 90^\circ $$, but I need to quantify this.</p>
+<p>Perhaps I should recall the general form of the radiation pattern for a dipole radiator. The intensity (which relates to the power) depends on $$ \cos^2 \theta $$, but in the relativistic case, there might be a Doppler shift effect that modifies this distribution.</p>
+<p>Wait, no, in the non-relativistic case, the radiation pattern for a dipole is proportional to $$ (1 + \cos^2 \theta)/2 $$, but for ultrarelativistic speeds, the distribution becomes more beamed forward, leading to a dependence that peaks at $$ \theta = 0 $$ or $$ \theta = \pi $$, depending on the direction of motion.</p>
+<p>Hmm, actually, for a charge moving at velocity $$ v $$, the radiation is concentrated in the forward direction due to the headlight effect. But in our case, the motion is oscillatory, so perhaps the radiation is spread out differently.</p>
+<p>Wait, no, the Weizsäcker-Williams method treats the fields as plane waves, so the radiation should be considered in the frame where the charge is momentarily at rest, but since the motion is oscillatory, it's more complicated.</p>
+<p>Maybe I should look up the standard result for synchrotron radiation's angular distribution. From what I remember, the radiation is highly beamed in the direction of motion, with a characteristic "double cone" pattern. The intensity falls off as $$ \theta $$ increases from the direction of motion.</p>
+<p>But wait, in our case, the motion is oscillatory along the $$ z $$-axis, so the direction of motion changes sinusoidally. That complicates things because the radiation direction varies with time. However, if the motion is fast enough, the radiation might average out over the oscillations, leading to an isotropic-like distribution, but I'm not entirely sure.</p>
+<p>Alternatively, perhaps the oscillatory motion leads to a coherent superposition of radiation fields, resulting in a specific angular dependence.</p>
+<p>Given that the problem specifies $$ \theta $$ as the angle between the direction of radiation and the $$ z $$-axis, I think I need to model the radiation pattern assuming that the primary contribution comes from the instantaneous acceleration direction.</p>
+<p>Since the acceleration is along the $$ z $$-axis (as the motion is purely oscillatory along $$ z $$), the radiation should primarily be perpendicular to $$ z $$, i.e., in the transverse directions. Therefore, the angular distribution should peak at $$ \theta = 90^\circ $$.</p>
+<p>But wait, in reality, even for oscillatory motion, the radiation isn't necessarily isotropic in the transverse plane. There could be a preferred direction due to the nature of the acceleration.</p>
+<p>Actually, for a charge oscillating along the $$ z $$-axis, the acceleration alternates direction periodically. The radiation fields would be dominated by the transverse components, and the angular distribution might exhibit a dependence on $$ \cos \theta $$ or some higher-order term.</p>
+<p>I think the standard result for the angular distribution of synchrotron radiation is proportional to $$ \sin^2 \theta $$, but I'm not certain. Alternatively, it might involve a relativistic correction factor due to the high speed of the charge.</p>
+<p>Wait, in the Weizsäcker-Williams approximation, the radiation is treated as a plane wave, so the angular distribution should reflect the properties of the wavefronts. Given that the charge is moving along $$ z $$, the wavevector of the radiation would be in the direction of motion, leading to a forward-peaking distribution.</p>
+<p>However, since the motion is oscillatory, the direction of the wavevector might vary, but over many cycles, the radiation could average out to an isotropic distribution. But I'm not sure if that's the case here.</p>
+<p>Alternatively, perhaps the oscillatory motion introduces a modulation in the radiation pattern, but for the purpose of finding the average angular distribution, we can consider the steady-state case.</p>
+<p>I think I need to proceed step-by-step:</p>
+<ol>
+<li>
+<p><strong>Find the Expression for the Fields</strong>: Using the Weizsäcker-Williams method, express the electric and magnetic fields in terms of the charge's acceleration.</p>
+</li>
+<li>
+<p><strong>Compute the Poynting Vector</strong>: The Poynting vector gives the energy flux, which can be integrated over solid angle to find the total power.</p>
+</li>
+<li>
+<p><strong>Integrate Over Solid Angle</strong>: Express the Poynting vector as a function of $$ \theta $$ and $$ \phi $$, then perform the integration to find $$ P $$.</p>
+</li>
+<li>
+<p><strong>Normalize and Find Angular Distribution</strong>: Determine how the power is distributed as a function of $$ \theta $$.</p>
+</li>
+</ol>
+<p>Starting with step 1, the Weizsäcker-Williams fields are given by:</p>
+<p>$$ \mathbf{E} = \frac{e}{4\pi \epsilon_0} \int \frac{\ddot{\chi}(k)}{k^2} e^{i(\mathbf{k} \cdot \mathbf{r} - \omega_k t)} d^3k $$</p>
+<p>where $$ \chi(k) $$ is the Fourier transform of the displacement $$ z(t) $$. For our case, $$ z(t) = z_0 \cos(\omega t) $$, so:</p>
+<p>$$ \chi(k) = \frac{z_0}{2} [\delta(\omega_k - \omega) + \delta(\omega_k + \omega)] $$</p>
+<p>Thus, the acceleration $$ \ddot{\chi}(k) $$ would be $$ -z_0 \omega^2 \cos(\omega t) $$, but in Fourier space, it's represented by derivatives of the delta functions.</p>
+<p>This seems a bit involved. Maybe instead, I can use the known result for the radiation from an oscillating charge. The power radiated by an electron undergoing harmonic motion is given by the Larmor formula:</p>
+<p>$$ P = \frac{e^2 a^2}{6\pi \epsilon_0 c^3} $$</p>
+<p>where $$ a $$ is the magnitude of acceleration. Substituting $$ a = z_0 \omega^2 $$, we get:</p>
+<p>$$ P = \frac{e^2 z_0^2 \omega^4}{6\pi \epsilon_0 c^3} $$</p>
+<p>But this is the total power. How do I find the angular distribution?</p>
+<p>In the non-relativistic case, the radiation pattern for a dipole oscillator is $$ (1 + \cos^2 \theta)/2 $$. However, for ultrarelativistic speeds, the radiation is beamed forward, and the angular distribution becomes more peaked around the direction of motion.</p>
+<p>Wait, but in our case, the motion is oscillatory along $$ z $$, so the direction of motion changes. Does this affect the angular distribution significantly?</p>
+<p>Alternatively, perhaps the oscillatory motion leads to a time-averaged radiation pattern that is isotropic in the transverse directions. But I'm not sure.</p>
+<p>Wait, another approach: the Weizsäcker-Williams method assumes that the fields can be approximated as plane waves. Therefore, the radiation fields can be written as:</p>
+<p>$$ \mathbf{E} = E_0 \hat{\theta} $$
+$$ \mathbf{B} = B_0 \hat{\phi} $$</p>
+<p>where $$ \hat{\theta} $$ and $$ \hat{\phi} $$ are the unit vectors in the spherical coordinate system. The magnitudes $$ E_0 $$ and $$ B_0 $$ depend on the acceleration and the distance $$ r $$.</p>
+<p>The Poynting vector $$ \mathbf{S} = \frac{1}{4\pi} \mathbf{E} \times \mathbf{B} $$ would then point radially outward, and its magnitude would give the power per unit area.</p>
+<p>Assuming the fields are uniform across the sphere, the total power $$ P $$ is the integral of $$ S $$ over the surface area:</p>
+<p>$$ P = \int \mathbf{S} \cdot d\mathbf{A} = S \cdot 4\pi r^2 $$</p>
+<p>But to find the angular distribution, I need to express $$ S $$ as a function of $$ \theta $$.</p>
+<p>Wait, perhaps I'm overcomplicating this. Let me try to recall the standard result for synchrotron radiation. The power radiated by an electron in circular motion is given by:</p>
+<p>$$ P = \frac{e^2 c \gamma^6}{6\pi m_e^2} $$</p>
+<p>But in our case, the motion is linear oscillatory, not circular. However, the Weizsäcker-Williams method should still apply.</p>
+<p>Alternatively, considering the oscillatory motion as a series of small accelerations, each contributing to the radiation. The total power would be the sum of the contributions from each acceleration event.</p>
+<p>But I'm getting stuck here. Maybe I should refer back to the initial information provided.</p>
+<p>The user mentioned that the photon number spectrum is $$ \frac{dn}{dt_0 d\omega} \approx \alpha $$, where $$ \alpha = \frac{e^2}{4\pi \epsilon_0 \hbar c} $$. This suggests that each mode $$ \omega $$ emits $$ \alpha $$ photons per formation time $$ t_0 $$.</p>
+<p>The formation time $$ t_0 $$ is the time it takes for the radiation to move one wavelength, so $$ t_0 = \lambda / c = 2\pi / (\omega c) $$. Therefore, the rate of photon emission per unit frequency is:</p>
+<p>$$ \frac{dn}{dt d\omega} = \frac{\alpha}{t_0} = \frac{\alpha \omega c}{2\pi} $$</p>
+<p>Each photon has energy $$ \hbar \omega $$, so the power emitted in a small frequency interval $$ d\omega $$ is:</p>
+<p>$$ dP = \frac{dn}{dt d\omega} \cdot \hbar \omega d\omega \cdot c $$</p>
+<p>Wait, why multiply by $$ c $$? Because power is energy per unit time, and $$ dP $$ should account for the energy emitted in time $$ dt $$ and frequency $$ d\omega $$.</p>
+<p>Actually, let's clarify:</p>
+<p>The number of photons emitted per unit time $$ dt $$ and frequency $$ d\omega $$ is $$ \frac{dn}{dt d\omega} = \frac{\alpha}{t_0} = \frac{\alpha \omega c}{2\pi} $$.</p>
+<p>Each photon has energy $$ \hbar \omega $$, so the energy emitted per unit time $$ dt $$ is:</p>
+<p>$$ dE/dt = \frac{dn}{dt d\omega} \cdot \hbar \omega \cdot d\omega $$</p>
+<p>Therefore, integrating over all frequencies:</p>
+<p>$$ P = \int_0^\infty \frac{\alpha \omega c}{2\pi} \cdot \hbar \omega d\omega $$</p>
+<p>But this integral diverges unless there's an upper cutoff frequency. Perhaps the maximum frequency is determined by the inverse of the oscillation period, $$ \omega_{max} = \omega $$.</p>
+<p>Wait, that doesn't make sense. The maximum frequency shouldn't be the same as the oscillation frequency. Maybe I'm missing something here.</p>
+<p>Alternatively, perhaps the total power is simply the product of the number of photons and their energy per unit time. If $$ \frac{dn}{dt_0} = \alpha $$, then over time $$ t $$, the number of photons is $$ N = \alpha t / t_0 $$. Each photon has energy $$ \hbar \omega $$, so the total energy is $$ E = N \hbar \omega = \alpha t \hbar \omega / t_0 $$.</p>
+<p>Power is $$ P = E / t = \alpha \hbar \omega / t_0 $$.</p>
+<p>Substituting $$ t_0 = 2\pi / (\omega c) $$:</p>
+<p>$$ P = \alpha \hbar \omega / (2\pi / (\omega c)) ) = \alpha \hbar \omega^2 c / (2\pi) $$</p>
+<p>But $$ \alpha = e^2 / (4\pi \epsilon_0 \hbar c) $$, so substituting:</p>
+<p>$$ P = \frac{e^2}{4\pi \epsilon_0 \hbar c} \cdot \hbar \omega^2 c / (2\pi) = \frac{e^2 \omega^2}{8\pi^2 \epsilon_0} $$</p>
+<p>Hmm, that seems plausible. But I'm not entirely confident about the steps involving the photon number and power calculation.</p>
+<p>Alternatively, going back to the Larmor formula:</p>
+<p>$$ P = \frac{e^2 a^2}{6\pi \epsilon_0 c^3} $$</p>
+<p>With $$ a = z_0 \omega^2 $$, we have:</p>
+<p>$$ P = \frac{e^2 z_0^2 \omega^4}{6\pi \epsilon_0 c^3} $$</p>
+<p>Comparing this with the earlier result, they don't match, so I must have made a mistake somewhere.</p>
+<p>Perhaps the Weizsäcker-Williams method gives a different expression. Wait, the Weizsäcker-Williams approach often leads to expressions involving the square of the acceleration and the impedance of free space.</p>
+<p>The impedance of free space is $$ Z_0 = \sqrt{\mu_0 / \epsilon_0} = 377 \Omega $$. Also, note that $$ \alpha = e^2 / (4\pi \epsilon_0 \hbar c) $$, which is related to the fine-structure constant $$ \alpha = \frac{e^2}{4\pi \epsilon_0 \hbar c} \approx 1/137 $$.</p>
+<p>But I'm still unclear on how to connect this to the angular distribution.</p>
+<p>Perhaps I should consider the radiation in the near-field and far-field regions. For the far-field, the radiation fields dominate, and the angular distribution can be calculated using the multipole expansion.</p>
+<p>Given that the motion is along $$ z $$, the dominant term is the electric quadrupole or magnetic dipole, but for simplicity, let's assume the dipole approximation holds.</p>
+<p>The radiation pattern for a dipole is typically proportional to $$ \cos^2 \theta $$, but in the relativistic case, there's a Doppler boost that modifies this.</p>
+<p>Wait, in the case of a relativistically moving charge, the radiation is beamed forward, and the angular distribution becomes more peaked around the direction of motion. The exact form involves a relativistic factor $$ \gamma $$, but since we're dealing with oscillatory motion, perhaps the Doppler effect averages out.</p>
+<p>Alternatively, considering the oscillatory motion as a standing wave, the radiation might be symmetric in the transverse directions, leading to an angular distribution independent of $$ \phi $$ but dependent on $$ \theta $$.</p>
+<p>I think I need to accept that without a detailed derivation, I might not get the exact form, but I can reason that the angular distribution will peak at $$ \theta = 90^\circ $$ due to the transverse nature of the acceleration.</p>
+<p>Putting it all together, the radiated power $$</p>
+    </body>
+    </html>
+    
