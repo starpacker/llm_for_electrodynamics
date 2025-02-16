@@ -1,0 +1,15 @@
+[
+    {"problem": "A sphere of radius R carries a charge density \\rho(r)=kr (where k is a constant). Find the energy of the configuration. "},
+    {"problem": "A point dipole $\\mathbf{p}$ is imbedded at the center of a sphere of linear dielectric material (with radius $R$ and dielectric constant $\\epsilon_r$ ). Find the electric potential inside and the sphere."},
+    {"problem": "A long cable carries current in one direction uniformly distributed over its (circular) cross section. The current returns along the surface (there is a very thin insulating sheath separating the currents). Find the self-inductance per unit length."},
+    {
+    "problem": "Assuming that \"Coulomb's law\" for magnetic charges (q_m) reads\n$$\n\\mathbf{F}=\\frac{\\mu_0}{4\\pi}\\frac{q_{m_1}q_{m_2}}{r^2}\\hat{r}.\n$$\nwork out the force law for a monopole q_m moving with velocity \\mathbf{v} through electric and magnetic fields E and B."
+    },
+    {"problem": "When a charged particle approaches (or leaves) a conducting surface, radiation is emitted, associated with the changing electric dipole moment of the charge and its image. If the particle has mass $m$ and charge $q$, find the total radiated power, as a function of its height $z$ above the plane."},
+    {
+        "problem": "A sphere of radius R carries a charge density \\rho(r)=kr (where k is a constant). Find the energy of the configuration. "
+    },
+    {"problem": "Find the energy of a uniformly charged spherical shell of total charge $q$ and radius $R$."},
+    {"problem": "Find the potential of a uniformly charged spherical shell of radius $R$."},
+    {"problem": "Find the divergence of the function $\\vec{v} = \\frac{\\hat{r}}{r}$."}
+]
